@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+:root {
+    --main_color: #FBF5E7;
+    --sec_color: #BB4B36;
+    --ter_color: #1b4c95;
+    --quat_color: #2a6112;
+    --quin_color: #BF94E4;
+    --body_font: 'Work Sans', sans-serif;
+    --headings_font: 'Syne', sans-serif;
+    --speacial_font: "Arizonia", cursive;
+    --main_spacer: clamp(40px, 10%, 100px);
+    --small_spacer: clamp(30px, 6%, 50px);
+    
+    --large_headingFS: clamp(40px, 12vw, 200px);
+    --main_headingFS: clamp(30px, 7vw, 80px);
+    --sec_headingFS: clamp(35px, 5vw, 50px);
+    --ter_headingFS: clamp(25px, 3vw, 41px);
+    --quat_headingFS: clamp(23px, 4vw, 30px);
+    --quin_headingFS: 22px;
+    --text_xs: 14px;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*::-moz-selection {
+    color: var(--main_color);
+    background-color: var(--sec_color);
+}
+
+*::selection {
+    color: var(--main_color);
+    background-color: var(--sec_color);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--sec_color);
+    font-family: var(--body_font);
+    will-change: color, font-family, margin, padding;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-family: var(--headings_font);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    color: inherit;
+    margin-bottom: 7px;
+}
+
+strong {
+    font-weight: 600;
+}
+
+img,
+video {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Target the specific number input and hide the spin buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox, you may need this additional CSS rule */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button {
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+
+button.accordion-button {
+    white-space: normal;
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+    background-color: var(--main_color);
+}
+
+hr {
+    border-color: #e4e4e4;
+    opacity: 1;
+}
+
+.body_font {
+    font-family: var(--body_font) !important;
+}
+
+.headings_font {
+    font-family: var(--headings_font) !important;
+}
+
+.w-screen {
+    width: 100vw;
+}
+
+.max-w-full {
+    max-width: 100%;
+}
+
+.w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.h-fit {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.main_spacer {
+    padding-block: var(--main_spacer);
+}
+
+.main_spacer_top {
+    padding-top: var(--main_spacer);
+}
+
+.main_spacer_bottom {
+    padding-bottom: var(--main_spacer);
+}
+
+.small_spacer {
+    padding-block: var(--small_spacer);
+}
+
+.small_spacer_top {
+    padding-top: var(--small_spacer);
+}
+
+.small_spacer_bottom {
+    padding-bottom: var(--small_spacer);
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.text-underline {
+    text-decoration: underline !important;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.main_color {
+    color: var(--main_color);
+}
+
+.main_bg {
+    background-color: var(--main_color);
+}
+
+.sec_color {
+    color: var(--sec_color);
+}
+
+.sec_bg {
+    background-color: var(--sec_color);
+}
+
+.ter_color {
+    color: var(--ter_color);
+}
+
+.ter_bg {
+    background-color: var(--ter_color);
+}
+
+.quat_color {
+    color: var(--quat_color);
+}
+
+.quat_bg {
+    background-color: var(--quat_color);
+}
+
+.quin_color {
+    color: var(--quin_color);
+}
+
+.quin_bg {
+    background-color: var(--quin_color);
+}
+
+/* ---------------------------------- Global END ---------------------------------------------- */
+
+
+/* ---------------------------------- UTILS ---------------------------------------------- */
+
+h1.large_heading {
+    line-height: 1;
+    font-size: var(--large_headingFS);
+}
+
+h1 {
+    font-size: var(--main_headingFS);
+}
+
+h2 {
+    font-size: var(--main_headingFS);
+}
+
+h3 {
+    font-size: var(--sec_headingFS);
+}
+
+h4 {
+    font-size: var(--ter_headingFS);
+}
+
+h5 {
+    font-size: var(--quat_headingFS);
+}
+
+h6 {
+    font-size: var(--quin_headingFS);
+}
+
+.text_xs {
+    font-size: var(--text_xs);
+}
+
+b, .fancyLetter {
+    will-change: font-family;
+    font-weight: 400;
+    font-family: var(--speacial_font) !important;
+}
+
+hr {
+    border-style: dashed;
+    margin-block: 0 30px;
+    border-color: var(--sec_color);
+}
+
+.header_spacer {
+    padding-top: var(--header-height);
+}
+
+/* ---------------------------------- UTILS END ---------------------------------------------- */
+
+body.scrolled header {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.025), 0px 1px 1px 0px rgba(0, 0, 0, 0.01), 0px 0px 50px 0px rgba(0, 0, 0, 0.07);
+    background-color: var(--main_color);
+}
+
+.backToTop {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 19;
+    border-radius: 50%; 
+    display: inline-block;   
+    transform: scale(0);
+    transform-origin: center;
+    outline: 1px solid var(--sec_color);
+    background-color: var(--main_color);
+    border: 1px solid var(--main_color);
+    transition: transform .3s ease-in;
+    will-change: border, transform, outline;
+}
+
+body.scrolled .backToTop {
+    transform: scale(1);
+}
+
+.backToTop .arrow_up {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.progress-circle {
+    fill: none;
+}
+
+.progress-circle path {
+    stroke: var(--sec_color);
+    stroke-width: 4px;
+    transition: stroke-dashoffset 10ms linear 0s;
+    stroke-dasharray: 307.919, 307.919;
+    stroke-dashoffset: calc((var(--scrollPercentage) * 307.919) / 100);
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    background-color: transparent;
+    will-change: box-shadow, background-color;
+    transition: box-shadow .3s ease-in, background-color .3s ease-in;
+}
+
+header .scroll_length {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 5px;
+    will-change: width, background-color;
+    width: calc(var(--scrollPercentage));
+    background-color: var(--sec_color);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    overflow: clip;
+    background-color: var(--sec_color);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    will-change: background-color;
+}
+
+.bg_img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-color: var(--main_color);
+    background-image: url("../images/bg_texture.jpeg");
+}
+
+.home_banner .container * {
+    mix-blend-mode: multiply;
+}
+
+.home_banner .line {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    transform-origin: center;
+    background-color: var(--sec_color);
+    transform: translateX(50%) rotate(40deg);
+}
+
+.about_block {
+    border-radius: 40px 40px 0 0;
+}
+
+.gallery_section .images_wrapper > * a {
+    background-position: center;
+    background-attachment: fixed;
+    background-position: center calc(var(--header-height) + 1rem);
+    background-size: calc(100% / 3);
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+    .gallery_section .images_wrapper > * a {
+        background-size: calc((100% / 2) - 24px);    
+    }
+    .gallery_section .images_wrapper > *:nth-child(odd) a {
+        background-position: 12px calc(var(--header-height) + 1rem);
+    }
+    .gallery_section .images_wrapper > *:nth-child(even) a {
+        background-position: 36px calc(var(--header-height) + 1rem);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .gallery_section .images_wrapper > * a {
+        background-size: calc(100% - 24px);
+    }
+}
+
+.gallery_section .images_wrapper > * a img {
+    opacity: 0;
+}
+
+.projectTitle {
+    top: 40%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.project_block {
+    border-top: 1px dashed var(--main_color);
+}
+
+.project_block:nth-child(odd) > .row {
+    flex-direction: row-reverse;
+}
+
+.clippyDiv {
+    border-radius: 50px;
+    overflow: hidden;
+    /* background-color: rgba(182, 75, 55, .21); */
+    background-color: #FBF5E733;
+}
+
+.clippyDiv > * {
+    transform: scale(1.5);
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: transform .5s ease-in, -webkit-clip-path .6s ease-in-out;
+    transition: clip-path .6s ease-in-out, transform .5s ease-in;
+    transition: clip-path .6s ease-in-out, transform .5s ease-in, -webkit-clip-path .6s ease-in-out;
+}
+
+.clippyDiv.active > * {
+    transform: scale(1);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.main_btn {
+    position: relative;
+    outline: none;
+    border: none;
+    padding: 7px 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: var(--sec_color);
+    background-color: var(--main_color);
+    overflow: hidden;
+    z-index: 1;
+    will-change: color, background-color;
+    transition: color .2s ease-in;
+}
+
+.main_btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+    width: var(--btn-width);
+    height: var(--btn-width);
+    transform: translate(-50%, 0);
+    background-color: var(--ter_color);
+    transform-origin: top;
+    will-change: top, transform, bottom, height, background-color;
+    transition: top .4s ease-in-out, transform .4s ease-in-out, bottom .4s ease-in-out, height .4s ease-in-out;
+}
+
+.main_btn.active {
+    color: var(--main_color);
+}
+
+.main_btn.reset::before {
+    opacity: 0;
+}
+
+.main_btn.active::before {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);   
+}
+
+.main_btn.inactive::before {
+    top: 0;
+    opacity: 1;
+    transform: translate(-50%, -100%);
+}
+
+.contact_section {
+    overflow: hidden;
+    border-radius: 45px;
+}
+
+.mainFormCSS .input_wrapper {
+    position: relative;
+}
+
+.mainFormCSS textarea {
+    resize: none;    
+}
+
+.mainFormCSS input,
+.mainFormCSS textarea {
+    width: 100%;
+    outline: none;
+    padding: 7px 14px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--sec_color);
+    background-color: transparent;
+    will-change: border;
+    transition: border .3s ease-in;
+}
+
+.mainFormCSS .input_wrapper label {
+    position: absolute;
+    left: 16px;
+    right: 0;
+    width: fit-content;
+    pointer-events: none;
+    z-index: 1;
+    top: 20px;
+    line-height: 1;
+    padding-inline: 1px;
+    background-color: var(--main_color);
+    transform: translateY(-50%);
+    color: var(--sec_color);    
+    opacity: 0;
+    will-change: transform, top, color, opacity;
+    transition: transform .3s ease-in, top .3s ease-in, color .3s ease-in, opacity .3s ease-in;
+}
+
+.mainFormCSS .input_wrapper input:focus + label,
+.mainFormCSS .input_wrapper input:not(:placeholder-shown) + label,
+.mainFormCSS .input_wrapper textarea:focus + label,
+.mainFormCSS .input_wrapper textarea:not(:placeholder-shown) + label {
+    top: 0;
+    opacity: 1;
+}
+
+.mainFormCSS .input_wrapper input::placeholder,
+.mainFormCSS .input_wrapper textarea::placeholder {
+    transition: opacity .3s ease-in;
+}
+
+.mainFormCSS .input_wrapper input:focus::placeholder,
+.mainFormCSS .input_wrapper textarea:focus::placeholder {
+    opacity: 0;
+}
+
+.mainFormCSS button[type="submit"] {
+    outline: none;
+    border: none;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background-color: var(--sec_color);
+    will-change: transform, background-color;
+    transition: transform .3s ease-in-out;
+}
+
+.mainFormCSS button[type="submit"]:hover {
+    transform: scale(1.1) rotate(0);
+}
+
+.contact_section .img_wrapper {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+footer {
+    color: var(--main_color);
+    margin-top: -45px;
+    padding-block: calc(45px + var(--small_spacer)) var(--small_spacer);
+    will-change: padding-block, background-color;
+}
+
+.banner_section {
+    height: 70vh;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.profile_img {
+    max-width: 120px;
+    margin: 20px auto;
+}
+ 
+@media only screen and (min-width: 940px) {
+    .profile_img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        max-width: 150px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.atropos .img_wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.eyes_section_wrap {
+    z-index: -2;
+    position: relative;
+    margin-top: calc(-1 * var(--main_spacer));
+}
+
+.eyes_section {
+    width: 120vw;
+    flex-shrink: 0;
+    border-radius: 50% 50% 0 0;
+    background-color: var(--quin_color);
+}
+
+.eyes_section ellipse.eye {
+    -webkit-transform: translate(var(--eye-xaxis, 0), var(--eye-yaxis, 0));
+    -moz-transform: translate(var(--eye-xaxis, 0), var(--eye-yaxis, 0));
+    -ms-transform: translate(var(--eye-xaxis, 0), var(--eye-yaxis, 0));
+    transform: translate(var(--eye-xaxis, 0), var(--eye-yaxis, 0));
+}
+
+
+/* ---------------------------------- Page Varients ---------------------------------------------- */
+
+body.aboutPage main {
+    background-color: var(--ter_color);
+}
+
+body.contactPage main {
+    background-color: var(--quin_color);
+}
+
+body.aboutPage footer {
+    background-color: var(--ter_color);
+}
+
+body.contactPage footer {
+    background-color: var(--quin_color);
+}
+
+body.aboutPage header .scroll_length {
+    background-color: var(--ter_color);
+}
+
+body.contactPage header .scroll_length {
+    background-color: var(--quin_color);
+}
+
+body.aboutPage .backToTop .progress-circle path {
+    stroke: var(--ter_color);
+}
+
+body.contactPage .backToTop .progress-circle path {
+    stroke: var(--quin_color);
+}
+
+body.aboutPage .backToTop {
+    outline: 1px solid var(--ter_color);
+}
+
+body.contactPage .backToTop {
+    outline: 1px solid var(--quin_color);
+}
+
+body.aboutPage .mainFormCSS input,
+body.aboutPage .mainFormCSS textarea {
+    border-color: var(--ter_color);
+}
+
+body.contactPage .mainFormCSS input,
+body.contactPage .mainFormCSS textarea {
+    border-color: var(--main_color);
+    color: var(--main_color);
+}
+
+body.aboutPage .mainFormCSS .input_wrapper label {
+    color: var(--ter_color);
+}
+
+body.contactPage .mainFormCSS .input_wrapper label {
+    color: var(--main_color);
+    background-color: var(--quin_color);
+}
+
+body.aboutPage .mainFormCSS button[type="submit"] {
+    background-color: var(--ter_color);
+}
+
+body.aboutPage .mainFormCSS button[type="submit"].main_btn::before {
+    background-color: var(--sec_color);
+}
+
+body.contactPage .mainFormCSS button[type="submit"] {
+    background-color: var(--ter_color);
+}
+
+body.contactPage .mainFormCSS button[type="submit"].main_btn::before {
+    background-color: var(--sec_color);
+}
+
+/* ---------------------------------- Page Varients End ---------------------------------------------- */
+
+.bgImg_section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-attachment: fixed;
+}
